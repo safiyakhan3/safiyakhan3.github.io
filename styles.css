@@ -1,0 +1,125 @@
+
+/* Shared external stylesheet */
+:root {
+  --page-bg: #faf7f2;
+  --text: #222;
+  --accent: #2d5a6d;
+  --maxw: 980px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: "Merriweather", serif; /* required: serif family with serif fallback */
+  color: var(--text);
+  background: var(--page-bg);         /* required: background color */
+  line-height: 1.6;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 0.75rem;
+  background: #fff;
+  border: 1px solid #000;
+}
+
+header {
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+  margin: 0;
+  padding: 1rem 1rem 0.25rem;
+  font-weight: 700;
+  font-size: 1.75rem;                 /* styling change */
+}
+
+nav { padding: 0 1rem 1rem; }
+
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  text-decoration: none;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;                 /* styling change */
+}
+
+.nav a:hover, .nav a:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+main {
+  max-width: var(--maxw);
+  margin: 1.25rem auto;
+  padding: 1rem;                      /* required: spacing around content */
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+}
+
+h2 {
+  margin-top: 0;
+  color: var(--accent);               /* styling change */
+  font-size: 1.35rem;                 /* styling change */
+}
+
+p, li, dd {
+  font-size: 1rem;
+}
+
+strong { font-weight: 700; }          /* styling change */
+em { font-style: italic; }            /* styling change */
+.caption { font-size: 0.95rem; color: #555; }
+
+.image-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem;
+}
+
+.image-row img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.grid-two {
+  display: grid;                      /* unique layout page */
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 720px) {
+  .grid-two { grid-template-columns: 1fr; }
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #666;
+}
